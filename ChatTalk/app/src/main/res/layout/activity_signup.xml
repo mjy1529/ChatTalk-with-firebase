@@ -8,6 +8,13 @@
     android:orientation="vertical"
     tools:context=".SignupActivity">
 
+    <ImageView
+        android:id="@+id/profileIv"
+        android:src="@drawable/camera"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:layout_margin="20dp"/>
+
     <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
