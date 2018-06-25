@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- START xml_defaults -->
+<defaultsMap>
+    <entry>
+        <key>splash_background</key>
+        <value>#000000</value>
+    </entry>
+
+    <entry> <!-- 환영 메시지 모두 대문자로할지 설정 여부 -->
+        <key>splash_message_caps</key>
+        <value>false</value>
+    </entry>
+
+    <entry> <!-- 환영 메시지 설정 -->
+        <key>splash_message</key>
+        <value>Welcome to ChatTalk!</value>
+    </entry>
+</defaultsMap>
+    <!-- END xml_defaults -->
