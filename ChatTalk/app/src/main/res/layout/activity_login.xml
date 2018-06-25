@@ -18,7 +18,7 @@
         android:layout_height="wrap_content">
 
         <EditText
-            android:id="@+id/loginActivity_idEt"
+            android:id="@+id/idEt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="아이디" />
@@ -30,7 +30,7 @@
         android:layout_height="wrap_content">
 
         <EditText
-            android:id="@+id/loginActivity_passwordEt"
+            android:id="@+id/passwordEt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="패스워드" />
@@ -38,14 +38,14 @@
     </android.support.design.widget.TextInputLayout>
 
     <Button
-        android:id="@+id/loginActivity_loginBtn"
+        android:id="@+id/loginBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/login_btn_border"
         android:text="LOGIN" />
 
     <TextView
-        android:id="@+id/loginActivity_signinBtn"
+        android:id="@+id/signupTv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
