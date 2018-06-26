@@ -5,6 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
+    
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_above="@+id/bottomNavigationView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
 
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/bottomNavigationView"
@@ -14,9 +23,6 @@
         app:itemBackground="@color/colorAccent"
         app:itemTextColor="#ffffff"
         app:itemIconTint="#ffffff"
-        app:menu="@menu/bottom_navigation">
-
-
-    </android.support.design.widget.BottomNavigationView>
+        app:menu="@menu/bottom_navigation"/>
 
 </RelativeLayout>
