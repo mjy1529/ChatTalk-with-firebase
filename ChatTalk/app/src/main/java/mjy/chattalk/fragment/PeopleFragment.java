@@ -73,7 +73,7 @@ public class PeopleFragment extends Fragment {
         }
 
         @Override
-        public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
+        public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, final int position) {
             Glide.with(holder.itemView.getContext())
                     .load(userModels.get(position).userProfile) //무엇을
                     .apply(new RequestOptions().circleCrop()) //모양 적용, 어떻게?
@@ -84,6 +84,7 @@ public class PeopleFragment extends Fragment {
                 @Override
                 public void onClick(View v) {
                     Intent intent = new Intent(getView().getContext(), MessageActivity.class);
+                    intent.putExtra("destinationUID", userModels.get(position).uid);
                     ActivityOptions activityOptions
                             = ActivityOptions.makeCustomAnimation(getView().getContext(), R.anim.fromright, R.anim.toleft);
                     startActivity(intent, activityOptions.toBundle());
