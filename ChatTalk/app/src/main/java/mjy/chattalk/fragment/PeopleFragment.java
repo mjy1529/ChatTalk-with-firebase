@@ -1,6 +1,9 @@
 package mjy.chattalk.fragment;
 
+import android.app.Activity;
+import android.app.ActivityOptions;
 import android.app.Fragment;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -23,6 +26,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import mjy.chattalk.R;
+import mjy.chattalk.chat.MessageActivity;
 import mjy.chattalk.model.UserModel;
 
 public class PeopleFragment extends Fragment {
@@ -75,6 +79,16 @@ public class PeopleFragment extends Fragment {
                     .apply(new RequestOptions().circleCrop()) //모양 적용, 어떻게?
                     .into(((CustomViewHolder)holder).friendItem_image); //어디에?
             ((CustomViewHolder)holder).friendItem_id.setText(userModels.get(position).userName);
+
+            holder.itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(getView().getContext(), MessageActivity.class);
+                    ActivityOptions activityOptions
+                            = ActivityOptions.makeCustomAnimation(getView().getContext(), R.anim.fromright, R.anim.toleft);
+                    startActivity(intent, activityOptions.toBundle());
+                }
+            });
         }
 
         @Override

@@ -16,6 +16,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
@@ -56,7 +57,7 @@ public class SignupActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 if (signup_emailEt.getText().toString() == null || signup_nameEt.getText().toString() == null
-                        || signup_passwordEt.getText().toString() == null) {
+                        || signup_passwordEt.getText().toString() == null || profileUri == null) {
                     Toast.makeText(SignupActivity.this, "모든 정보를 입력해주세요.", Toast.LENGTH_SHORT).show();
                     return;
                 }
@@ -77,7 +78,13 @@ public class SignupActivity extends AppCompatActivity {
                                         UserModel userModel = new UserModel();
                                         userModel.userName = signup_nameEt.getText().toString();
                                         userModel.userProfile = imageUrl;
-                                        FirebaseDatabase.getInstance().getReference().child("users").child(uid).setValue(userModel);
+                                        FirebaseDatabase.getInstance().getReference().child("users").child(uid).setValue(userModel)
+                                                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                                    @Override
+                                                    public void onSuccess(Void aVoid) {
+                                                        SignupActivity.this.finish(); //인터페이스 안에 있을 때는 이렇게 finish
+                                                    }
+                                                });
                                     }
                                 });
                             }
