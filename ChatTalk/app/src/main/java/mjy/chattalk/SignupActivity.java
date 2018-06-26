@@ -78,9 +78,6 @@ public class SignupActivity extends AppCompatActivity {
                                         userModel.userName = signup_nameEt.getText().toString();
                                         userModel.userProfile = imageUrl;
                                         FirebaseDatabase.getInstance().getReference().child("users").child(uid).setValue(userModel);
-
-                                        startActivity(new Intent(SignupActivity.this, LoginActivity.class));
-                                        finish();
                                     }
                                 });
                             }
